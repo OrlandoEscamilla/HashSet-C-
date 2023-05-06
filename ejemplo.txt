@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Crear un nuevo HashSet de números enteros
+        HashSet<int> numeros = new HashSet<int>();
+
+        // Agregar elementos al HashSet
+        numeros.Add(5);
+        numeros.Add(3);
+        numeros.Add(7);
+        numeros.Add(3); // Intentamos agregar un elemento duplicado, pero el HashSet lo ignorará
+
+        // Verificar si un elemento existe en el HashSet
+        bool existe = numeros.Contains(5);
+        Console.WriteLine("¿El número 5 existe en el HashSet? " + existe);
+
+        // Obtener el número de elementos en el HashSet
+        int count = numeros.Count;
+        Console.WriteLine("Número de elementos en el HashSet: " + count);
+
+        // Eliminar un elemento del HashSet
+        bool eliminado = numeros.Remove(3);
+        Console.WriteLine("¿El número 3 fue eliminado del HashSet? " + eliminado);
+
+        // Recorrer y mostrar todos los elementos del HashSet
+        Console.WriteLine("Elementos en el HashSet:");
+        foreach (int numero in numeros)
+        {
+            Console.WriteLine(numero);
+        }
+
+        // Limpiar el HashSet (eliminar todos los elementos)
+        numeros.Clear();
+        Console.WriteLine("Número de elementos en el HashSet después de limpiar: " + numeros.Count);
+
+        Console.ReadLine();
+    }
+}
